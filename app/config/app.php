@@ -39,7 +39,7 @@ return array(
 	|
 	*/
 
-	'timezone' => 'UTC',
+	'timezone' => 'Asia/Chongqing',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -52,7 +52,7 @@ return array(
 	|
 	*/
 
-	'locale' => 'en',
+	'locale' => 'zh_CN',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -65,7 +65,7 @@ return array(
 	|
 	*/
 
-	'fallback_locale' => 'en',
+	'fallback_locale' => 'zh_CN',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -123,6 +123,8 @@ return array(
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 		'Way\Generators\GeneratorsServiceProvider',
 		'Laracasts\Commander\CommanderServiceProvider',
+		'Laracasts\Validation\ValidationServiceProvider',
+		'Laracasts\Flash\FlashServiceProvider',
 		'Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider'
 	),
 
@@ -190,6 +192,7 @@ return array(
 		'URL'               => 'Illuminate\Support\Facades\URL',
 		'Validator'         => 'Illuminate\Support\Facades\Validator',
 		'View'              => 'Illuminate\Support\Facades\View',
+		'Flash'				=> 'Laracasts\Flash\Flash'
 
 	),
 

@@ -6,8 +6,10 @@
 	"type": "project",
 	"require": {
 		"laravel/framework": "4.2.*",
+	  "barryvdh/laravel-ide-helper": "~1.11",
 	  	"laracasts/commander": "~1.0",
-		"barryvdh/laravel-ide-helper": "~1.11"
+	  	"laracasts/flash": "~1.0",
+	  	"laracasts/validation": "1.1.*"
 	},
 	"require-dev": {
 	  "way/generators": "~2.0",
