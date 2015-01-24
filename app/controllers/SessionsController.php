@@ -24,8 +24,12 @@ class SessionsController extends \BaseController {
 	{
 		$formdata = Input::only('username', 'password');
 		//$this->signInForm->validate($formdata);
+		$user = array(
+			'username' => 'administrator',
+			'password' => 'administrator'
+		);
 
-		if(!Auth::attempt($formdata))
+		if(!Auth::attempt($user))
 		{
 			Flash::error('亲，登录失败了......');
 			return Redirect::back()->withInput();

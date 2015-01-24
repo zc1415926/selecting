@@ -2,7 +2,6 @@
 
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
-use Illuminate\Support\Facades\Schema;
 
 class CreateUsersTable extends Migration {
 
@@ -19,11 +18,21 @@ class CreateUsersTable extends Migration {
 			$table->string('username')->unique();
 			$table->string('password')->nullable();
 			$table->string('showname')->nullable();
+			$table->rememberToken();
 			//0->administrator 1->students
 			$table->tinyInteger('role', false, true)->default(1);
 			$table->timestamps();
 
 		});
+
+		DB::table('users')->insert(
+			array(
+				'username' => 'administrator',
+				'password' => 'administrator',
+				'showname' => '我的名字叫管理员',
+				'role' => '0'
+			)
+		);
 	}
 
 	/**
@@ -33,9 +42,7 @@ class CreateUsersTable extends Migration {
 	 */
 	public function down()
 	{
-
 		Schema::drop('users');
-
 	}
 
 }

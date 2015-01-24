@@ -1,5 +1,6 @@
 @extends('layouts.default')
     @section('content')
-        if(
+        @if($currentUser)
+        {{ $currentUser->username }}
     @endsection
 @stop

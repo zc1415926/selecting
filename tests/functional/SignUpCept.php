@@ -1,3 +1,4 @@
 <?php 
 $I = new FunctionalTester($scenario);
-$I->wantTo('perform actions and see result');
+$I->am('a guest');
+$I->wantTo('sign up');
