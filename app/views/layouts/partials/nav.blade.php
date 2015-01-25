@@ -7,7 +7,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="／">Selecting</a>
+            <a class="navbar-brand" href="{{route('home')}}">Selecting</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             {{ Form::open(['route' => 'signin_path', 'class' => "navbar-form navbar-right"]) }}

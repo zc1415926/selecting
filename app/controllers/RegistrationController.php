@@ -32,8 +32,9 @@ class RegistrationController extends \BaseController {
 		$this->registrationForm->validate(Input::all());
 
 		$user = $this->execute(RegisterUserCommand::class);
-
 		Auth::login($user);
+
+		Flash::message('成功添加了一个用户！');
 
 		return Redirect::home();
 	}

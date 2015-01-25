@@ -13,11 +13,15 @@
 <body>
     @include('layouts.partials.nav')
     <div class="container">
-        @yield('content')
+        @include('flash::message')
     </div>
+        @yield('content')
+
     @include('layouts.partials.footer')
 
-    <script src="http://cdn.bootcss.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    {{ /*jquery.min.js must at the front of the bootstrap.min.js*/ }}
     <script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
+    <script src="http://cdn.bootcss.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
 </body>
 </html>
