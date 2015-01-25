@@ -26,12 +26,18 @@ Route::post('register', [
 	'uses' => 'RegistrationController@store'
 ]);
 
-Route::post('signin', [
-	'as' => 'signin_path',
+//-------------------------------------
+Route::get('login', [
+	'as' => 'login_path',
+	'uses' => 'SessionsController@create'
+]);
+
+Route::post('login', [
+	'as' => 'login_path',
 	'uses' => 'SessionsController@store'
 ]);
 
-Route::get('profile', [
-	'as' => 'profile_path',
-	'uses' => 'ProfileController@index'
+Route::get('logout', [
+	'as' => 'logout_path',
+	'uses' => 'SessionsController@destroy'
 ]);

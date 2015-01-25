@@ -1,41 +1,39 @@
 <?php
 
-//use Selecting\Users\SignInForm;
-
 class SessionsController extends \BaseController {
 
-	private $signInForm;
-
-	function __construct(/*SignInForm $signInForm*/)
+	/**
+	 * Show the form for creating a new resource.
+	 *
+	 * @return Response
+	 */
+	public function create()
 	{
-		//除了destroy方法，其余的方法都要求以guest身份执行
-		$this->beforeFilter('guest', ['except' => 'destroy']);
-		//$this->signInForm = $signInForm;
+		return View::make('sessions.create');
 	}
 
 
-
 	/**
-	 * 处理用户登录逻辑
+	 * Store a newly created resource in storage.
 	 *
 	 * @return Response
 	 */
 	public function store()
 	{
 		$formdata = Input::only('username', 'password');
-		//$this->signInForm->validate($formdata);
-		$user = array(
-			'username' => 'administrator',
-			'password' => 'administrator'
-		);
-
-		if(!Auth::attempt($user))
+		if( ! Auth::attempt($formdata))
 		{
-			Flash::error('亲，登录失败了......');
-			return Redirect::back()->withInput();
+			Flash::error('login error');
+			Redirect::back()->withInput();
 		}
 
-		Flash::success('欢迎回来');
-		return Redirect::intended('/profile');
+		Flash::success('login success');
+		return Redirect::home();
+	}
+
+	public function destroy()
+	{
+		Auth::logout();
+		return Redirect::home();
 	}
 }

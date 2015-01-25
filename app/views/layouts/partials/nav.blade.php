@@ -9,27 +9,32 @@
             </button>
             <a class="navbar-brand" href="{{route('home')}}">Selecting</a>
         </div>
+
         <div id="navbar" class="navbar-collapse collapse">
-            {{ Form::open(['route' => 'signin_path', 'class' => "navbar-form navbar-right"]) }}
-            <div class="form-group">
-                {{ Form::text('quick_username', '', ['class' => 'form-control', 'placeholder' => 'username', 'required' => 'required']) }}
-            </div>
-            <div class="form-group">
-                {{ Form::password('quick_password', ['class' => 'form-control', 'placeholder' => 'password', 'required' => 'required']) }}
-            </div>
-            <div class="form-group">
-                {{ Form::submit('登 录', ['class' => 'btn btn-success']) }}
-            </div>
-            {{ Form::close() }}
-            <!--<form class="navbar-form navbar-right">
+            @if( ! $currentUser )
+                {{ Form::open(['route' => 'login_path', 'class' => "navbar-form navbar-right"]) }}
                 <div class="form-group">
-                    <input type="text" placeholder="Email" class="form-control">
+                    {{ Form::text('quick_username', '', ['class' => 'form-control', 'placeholder' => 'username', 'required' => 'required']) }}
                 </div>
                 <div class="form-group">
-                    <input type="password" placeholder="Password" class="form-control">
+                    {{ Form::password('quick_password', ['class' => 'form-control', 'placeholder' => 'password', 'required' => 'required']) }}
                 </div>
-                <button type="submit" class="btn btn-success">Sign in</button>
-            </form>-->
+                <div class="form-group">
+                    {{ Form::submit('登 录', ['class' => 'btn btn-success']) }}
+                </div>
+                {{ Form::close() }}
+            @else
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{$currentUser->username}}<span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="#">Separated link</a></li>
+                            <li class="divider"></li>
+                            <li>{{ link_to_route('logout_path', '退出登录') }}</li>
+                        </ul>
+                    </li>
+                </ul>
+            @endif
         </div><!--/.navbar-collapse -->
     </div>
 </nav>
