@@ -9,7 +9,7 @@
 	  "barryvdh/laravel-ide-helper": "~1.11",
 	  	"laracasts/commander": "~1.0",
 	  	"laracasts/flash": "~1.0",
-	  	"laracasts/validation": "1.1.*"
+	  	"laracasts/validation": "~1.0"
 	},
 	"require-dev": {
 	  "way/generators": "~2.0",
@@ -24,7 +24,10 @@
 			"app/database/migrations",
 			"app/database/seeds",
 			"app/tests/TestCase.php"
-		]
+		],
+	  	"psr-4":{
+		  	"Selecting\\": "app/Selecting"
+		}
 	},
 	"scripts": {
 		"post-install-cmd": [
@@ -44,9 +47,6 @@
 	"config": {
 		"preferred-install": "dist"
 	},
-	"minimum-stability": "stable",
-	"repositories": [
-		{"type": "composer", "url": "http://pkg.phpcomposer.com/repo/packagist/"},
-		{"packageist":false}
-	]
+	"minimum-stability": "stable"
+
 }

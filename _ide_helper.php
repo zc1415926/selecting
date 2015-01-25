@@ -1,7 +1,7 @@
 <?php
 /**
  * An helper file for Laravel 4, to provide autocomplete information to your IDE
- * Generated for Laravel 4.2.16 on 2015-01-23.
+ * Generated for Laravel 4.2.16 on 2015-01-25.
  *
  * @author Barry vd. Heuvel <barryvdh@gmail.com>
  * @see https://github.com/barryvdh/laravel-ide-helper
@@ -8674,34 +8674,6 @@ namespace {
          */
         public static function setSession($session){
             \Illuminate\Routing\Redirector::setSession($session);
-        }
-        
-    }
-
-
-    class Redis extends \Illuminate\Support\Facades\Redis{
-        
-        /**
-         * Get a specific Redis connection instance.
-         *
-         * @param string $name
-         * @return \Predis\ClientInterface 
-         * @static 
-         */
-        public static function connection($name = 'default'){
-            return \Illuminate\Redis\Database::connection($name);
-        }
-        
-        /**
-         * Run a command against the Redis database.
-         *
-         * @param string $method
-         * @param array $parameters
-         * @return mixed 
-         * @static 
-         */
-        public static function command($method, $parameters = array()){
-            return \Illuminate\Redis\Database::command($method, $parameters);
         }
         
     }

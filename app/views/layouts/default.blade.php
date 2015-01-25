@@ -12,7 +12,9 @@
 </head>
 <body>
     @include('layouts.partials.nav')
-    @yield('content')
+    <div class="container">
+        @yield('content')
+    </div>
     @include('layouts.partials.footer')
 
     <script src="http://cdn.bootcss.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>

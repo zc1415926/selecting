@@ -12,10 +12,10 @@
         <div id="navbar" class="navbar-collapse collapse">
             {{ Form::open(['route' => 'signin_path', 'class' => "navbar-form navbar-right"]) }}
             <div class="form-group">
-                {{ Form::text('username', '', ['class' => 'form-control', 'placeholder' => 'username', 'required' => 'required']) }}
+                {{ Form::text('quick_username', '', ['class' => 'form-control', 'placeholder' => 'username', 'required' => 'required']) }}
             </div>
             <div class="form-group">
-                {{ Form::password('password', ['class' => 'form-control', 'placeholder' => 'password', 'required' => 'required']) }}
+                {{ Form::password('quick_password', ['class' => 'form-control', 'placeholder' => 'password', 'required' => 'required']) }}
             </div>
             <div class="form-group">
                 {{ Form::submit('登 录', ['class' => 'btn btn-success']) }}
