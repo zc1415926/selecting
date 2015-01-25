@@ -22,6 +22,6 @@
     <!-- jquery.min.js must at the front of the bootstrap.min.js -->
     <script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
     <script src="http://cdn.bootcss.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-    <script>$('#flash-overlay-modal').modal();</script>
+    <scritp>$('#flash-overlay_modal').modal();</scritp>
 </body>
 </html>
