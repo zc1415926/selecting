@@ -4,12 +4,12 @@
 
 class SessionsController extends \BaseController {
 
-	private $signInForm;
+	//private $signInForm;
 
 	function __construct(/*SignInForm $signInForm*/)
 	{
 		//除了destroy方法，其余的方法都要求以guest身份执行
-		$this->beforeFilter('guest', ['except' => 'destroy']);
+		//$this->beforeFilter('guest', ['except' => 'destroy']);
 		//$this->signInForm = $signInForm;
 	}
 
@@ -22,6 +22,7 @@ class SessionsController extends \BaseController {
 	 */
 	public function store()
 	{
+		dd('dfadf');
 		$formdata = Input::only('username', 'password');
 		//$this->signInForm->validate($formdata);
 		$user = array(
@@ -31,7 +32,7 @@ class SessionsController extends \BaseController {
 
 		if(!Auth::attempt($user))
 		{
-			Flash::error('亲，登录失败了......');
+			Flash::message('亲，登录失败了......');
 			return Redirect::back()->withInput();
 		}
 

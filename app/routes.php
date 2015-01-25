@@ -26,7 +26,7 @@ Route::post('register', [
 	'uses' => 'RegistrationController@store'
 ]);
 
-Route::post('signin', [
+Route::get('signin', [
 	'as' => 'signin_path',
 	'uses' => 'SessionsController@store'
 ]);
