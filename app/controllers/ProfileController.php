@@ -2,6 +2,12 @@
 
 class ProfileController extends \BaseController {
 
+	function __construct()
+	{
+		$this->beforeFilter('auth');
+	}
+
+
 	/**
 	 * Display a listing of the resource.
 	 *

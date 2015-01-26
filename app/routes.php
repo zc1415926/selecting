@@ -42,3 +42,7 @@ Route::get('logout', [
 	'uses' => 'SessionsController@destroy'
 ]);
 //-----------------------------------------------
+Route::get('profile', [
+	'as' => 'profile_path',
+	'uses' => 'ProfileController@index'
+]);

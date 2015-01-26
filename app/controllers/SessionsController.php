@@ -39,7 +39,8 @@ class SessionsController extends \BaseController {
 		}
 
 		Flash::success('login success');
-		return Redirect::home();
+		if(Auth::user()
+		return Redirect::intended('/profile');
 	}
 
 	/**
