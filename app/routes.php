@@ -41,3 +41,4 @@ Route::get('logout', [
 	'as' => 'logout_path',
 	'uses' => 'SessionsController@destroy'
 ]);
+//-----------------------------------------------

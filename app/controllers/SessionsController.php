@@ -2,6 +2,12 @@
 
 class SessionsController extends \BaseController {
 
+	function __construct()
+	{
+		$this->beforeFilter('guest', ['except' => 'destroy']);
+		$this->beforeFilter('csrf', array('on'=>'post'));
+	}
+
 	/**
 	 * Show the form for creating a new resource.
 	 *
@@ -14,7 +20,7 @@ class SessionsController extends \BaseController {
 
 
 	/**
-	 * Store a newly created resource in storage.
+	 * 用户登入
 	 *
 	 * @return Response
 	 */
@@ -26,11 +32,6 @@ class SessionsController extends \BaseController {
 			'password' => $formdata['quick_password']
 		);
 
-		//dd($logindata);
-		/*if( ! Auth::attempt($formdata))
-		{
-
-		}*/
 		if(!Auth::attempt($logindata))
 		{
 			Flash::error('login error');
@@ -41,6 +42,10 @@ class SessionsController extends \BaseController {
 		return Redirect::home();
 	}
 
+	/**
+	 * 用户登出
+	 * @return \Illuminate\Http\RedirectResponse
+     */
 	public function destroy()
 	{
 		Auth::logout();

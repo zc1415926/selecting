@@ -13,6 +13,7 @@ class RegistrationController extends \BaseController {
 	{
 		$this->registrationForm = $registrationForm;
 		$this->beforeFilter('guest');
+		$this->beforeFilter('csrf', array('on'=>'post'));
 	}
 
 	/**

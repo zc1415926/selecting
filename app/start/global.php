@@ -84,3 +84,11 @@ App::down(function()
 */
 
 require app_path().'/filters.php';
+
+/*
+ * 404错误处理
+ */
+App::missing(function($exception)
+{
+	return Response::view('errors.missing', array('error_code' => '404'), 404);
+});
