@@ -6,11 +6,6 @@
         <div class="container">
             <h1>Welcome to laravel selecting!</h1>
             <p>前轱辘不转，后轱辘转，后轱辘不转，扛起来看！</p>
-            @if(Auth::check())
-                {{ "aaaaa" }}
-            @else
-                {{ "bbbbb" }}
-            @endif
             <p>{{ link_to_route('register_path', '注册新用户', null, ['class' => 'btn btn-primary btn-lg']) }}</p>
         </div>
     </div>

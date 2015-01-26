@@ -20,11 +20,21 @@ class SessionsController extends \BaseController {
 	 */
 	public function store()
 	{
-		$formdata = Input::only('username', 'password');
-		if( ! Auth::attempt($formdata))
+		$formdata = Input::only('quick_username', 'quick_password');
+		$logindata = array(
+			'username' => $formdata['quick_username'],
+			'password' => $formdata['quick_password']
+		);
+
+		//dd($logindata);
+		/*if( ! Auth::attempt($formdata))
+		{
+
+		}*/
+		if(!Auth::attempt($logindata))
 		{
 			Flash::error('login error');
-			Redirect::back()->withInput();
+			return Redirect::back()->withInput();
 		}
 
 		Flash::success('login success');
