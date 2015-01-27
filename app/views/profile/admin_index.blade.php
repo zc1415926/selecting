@@ -2,7 +2,7 @@
     @section('content')
         <div class="container">
 
-            <h1>你好，庶民： {{ $currentUser->username }}</h1>
+        <h1>你好，管理员： {{ $currentUser->username }}</h1>
             <div class="col-sm-3 col-md-2 sidebar">
                 <ul class="nav nav-sidebar">
                     <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>

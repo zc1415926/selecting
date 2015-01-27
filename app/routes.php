@@ -46,3 +46,13 @@ Route::get('profile', [
 	'as' => 'profile_path',
 	'uses' => 'ProfileController@index'
 ]);
+
+/*Route::get('ordinary_profile', [
+	'as' => 'ordinary_profile_path',
+	'uses' => 'ProfileController@ordinary_index'
+]);
+
+Route::get('admin_profile', [
+	'as' => 'admin_profile_path',
+	'uses' => 'ProfileController@admin_index'
+]);*/

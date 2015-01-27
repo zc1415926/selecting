@@ -18,7 +18,6 @@ class SessionsController extends \BaseController {
 		return View::make('sessions.create');
 	}
 
-
 	/**
 	 * 用户登入
 	 *
@@ -38,8 +37,8 @@ class SessionsController extends \BaseController {
 			return Redirect::back()->withInput();
 		}
 
-		Flash::success('login success');
-		if(Auth::user()
+		//Flash::success('login success');
+
 		return Redirect::intended('/profile');
 	}
 
