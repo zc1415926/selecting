@@ -12,11 +12,15 @@
     <![endif]-->
 </head>
 <body>
-    @include('layouts.partials.admin_nav')
-    <div class="container">
-        @include('flash::message')
+    @include('layouts.partials.profile_nav')
+    <div class="row">
+        @include('profile.partials.admin_slider')
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+            @include('flash::message')
+            @yield('content')
+        </div>
     </div>
-        @yield('content')
+
 
     <!-- jquery.min.js must at the front of the bootstrap.min.js -->
     <script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>

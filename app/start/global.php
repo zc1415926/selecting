@@ -92,3 +92,11 @@ App::missing(function($exception)
 {
 	return Response::view('errors.missing', array('error_code' => '404'), 404);
 });
+
+HTML::macro('nav_link_li', function($uri, $title)
+{
+	$class = ( Route::current()->uri() == $uri/* or URI::is($route.'/*') */) ? 'class="active"' : '';
+	$href  = URL::to($uri);
+
+	return '<li ' . $class . '><a href="' . $href . '">' . $title . '</a></li>';
+});

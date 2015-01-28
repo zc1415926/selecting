@@ -54,6 +54,16 @@ Route::filter('auth.basic', function()
 	return Auth::basic();
 });
 
+Route::filter('auth.admin', function()
+{
+	//如果用户没有‘登录’或‘不是管理员’则回首页
+
+	if(!Auth::check() || Auth::user()->role != 0)
+	{
+		return Redirect::home();
+	}
+});
+
 /*
 |--------------------------------------------------------------------------
 | Guest Filter

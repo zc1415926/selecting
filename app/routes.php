@@ -56,3 +56,8 @@ Route::get('admin_profile', [
 	'as' => 'admin_profile_path',
 	'uses' => 'ProfileController@admin_index'
 ]);*/
+//----------------------------------------------
+Route::get('students', [
+	'as' => 'students_path',
+	'uses' => 'StudentsController@index'
+]);

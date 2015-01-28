@@ -12,7 +12,7 @@ class RegistrationController extends \BaseController {
 	function __construct(RegistrationForm $registrationForm)
 	{
 		$this->registrationForm = $registrationForm;
-		$this->beforeFilter('guest');
+		$this->beforeFilter('auth.admin');
 		$this->beforeFilter('csrf', array('on'=>'post'));
 	}
 
@@ -32,12 +32,12 @@ class RegistrationController extends \BaseController {
 	public function store()
 	{
 		$this->registrationForm->validate(Input::all());
-
-		$user = $this->execute(RegisterUserCommand::class);
-		Auth::login($user);
+		$this->execute(RegisterUserCommand::class);
+		//$user = $this->execute(RegisterUserCommand::class);
+		//Auth::login($user);
 
 		Flash::message('成功添加了一个用户！');
 
-		return Redirect::home();
+		return Redirect::back();
 	}
 }

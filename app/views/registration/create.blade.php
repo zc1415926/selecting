@@ -1,7 +1,6 @@
-@extends('layouts.default')
+@@extends('layouts.admin_profile')
 @section('content')
-    <div class="container">
-        <h1>用户注册</h1>
+        <h2>添加学生</h2>
 
         @if($errors->any())
             <div class="alert alert-danger">
@@ -30,5 +29,5 @@
             {{ Form::submit('完成注册', ['class' =>'btn btn-primary']) }}
         </div>
         {{ Form::close() }}
-    </div>
+
 @stop
