@@ -61,3 +61,13 @@ Route::get('students', [
 	'as' => 'students_path',
 	'uses' => 'StudentsController@index'
 ]);
+//----------------------------------------------
+Route::get('teachers', [
+	'as' => 'teachers_path',
+	'uses' => 'TeachersController@index'
+]);
+
+Route::get('addteacher', [
+	'as' => 'addteacher_path',
+	'uses' => 'TeachersController@add'
+]);
