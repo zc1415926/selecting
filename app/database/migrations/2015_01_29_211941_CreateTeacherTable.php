@@ -16,6 +16,7 @@ class CreateTeacherTable extends Migration {
 			$table->increments('id');
 			$table->string('teachername');
 			$table->string('description');
+			$table->timestamps();
 		});
 
 		DB::table('teachers')->insert(array(

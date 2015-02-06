@@ -31,6 +31,12 @@ class CreateUsersTable extends Migration {
 				'password' => Hash::make('administrator'),
 				'showname' => '我的名字叫管理员',
 				'role' => '0'
+			),
+			array(
+				'username' => 'zc1415926',
+				'password' => Hash::make('zc1415926'),
+				'showname' => '我叫zc',
+				'role' => '1'
 			)
 		);
 	}

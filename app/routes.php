@@ -69,5 +69,10 @@ Route::get('teachers', [
 
 Route::get('addteacher', [
 	'as' => 'addteacher_path',
-	'uses' => 'TeachersController@add'
+	'uses' => 'TeachersController@create'
+]);
+
+Route::post('addteacher', [
+	'as' => 'addteacher_path',
+	'uses' => 'TeachersController@store'
 ]);
