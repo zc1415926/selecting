@@ -20,13 +20,15 @@ class TeachersController extends \BaseController {
 	/**
 	 * 列出所有教师
 	 *
+	 * withSquence是为了在列出教师表格时在第1列显示一个序号
 	 * @return Response
 	 */
 	public function index()
 	{
 		$teachers = Teacher::all();
+		$sequence = 1;
 
-		return View::make('teachers.index')->withTeachers($teachers);
+		return View::make('teachers.index')->withTeachers($teachers)->withSequence($sequence);
 	}
 
 

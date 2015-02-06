@@ -1,12 +1,21 @@
 @extends('layouts.admin_profile')
 @section('content')
     <h1>在这里浏览所有的教师</h1>
-    <hr>
     <h3>总教师数： {{ count($teachers) }}</h3>
-    <ul>
+    <hr>
+    <table class="table">
+        <thead><tr><th>#</th><th>教师姓名</th><th>教师简介</th></tr></thead>
+        <tbody>
+
         @foreach($teachers as $teacher)
-            <li>{{ $teacher->teachername }} | {{$teacher->description}}</li>
+            <tr><td>{{ $sequence++ }}</td>
+                <td>{{ $teacher->teachername }}</td>
+                <td>{{$teacher->description}}</td>
+            </tr>
+
         @endforeach
-    </ul>
+
+        </tbody>
+    </table>
 @endsection
 @stop
